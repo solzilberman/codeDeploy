@@ -6,7 +6,6 @@ import Options from "./components/Options"
 function App() {
   return (
     <div className="App">
-      <h1>Code Deploy Test 2</h1>
       <Options />
     </div>
   );
