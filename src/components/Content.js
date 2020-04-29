@@ -7,6 +7,8 @@ import { Paper, Box, Typography, Tab, Tabs, AppBar } from '@material-ui/core';
 import VideocamRoundedIcon from '@material-ui/icons/VideocamRounded';
 import DescriptionRoundedIcon from '@material-ui/icons/DescriptionRounded';
 import MoreHorizRoundedIcon from '@material-ui/icons/MoreHorizRounded';
+import VideoList from '../api/VideoList';
+import Articles from "./Articles"
 
 
 
@@ -46,14 +48,30 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: theme.palette.background.paper,
-        minWidth: '80%'
+        minWidth: '80%',
+        marginTop: '5vh'
     },
 }));
 
-export default function Content() {
+export default function Content(props) {
+    const { category, stackend, language, level } = props;
     const classes = useStyles();
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
+
+    if (!props) {
+        return (
+            <div>
+                <h1>
+                    Loading...
+                </h1>
+            </div>
+        )
+    }
+
+    const { videos } = props;
+
+
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -87,21 +105,21 @@ export default function Content() {
                     onChangeIndex={handleChangeIndex}
                 >
                     <TabPanel value={value} index={0} dir={theme.direction}>
-                        <div style={{ height: '50vh' }}>
-                            <h1> hello</h1>
+                        <div style={{ display: 'flex', width: '100%', flexWrap: 'wrap', justifyContent: 'space-evenly', }}>
+                            <VideoList videos={videos} />
                         </div>
                     </TabPanel>
 
                     <TabPanel value={value} index={1} dir={theme.direction}>
-                        <div style={{ height: '50vh' }}>
-                            <h1> hello</h1>
+                        <div>
+                            <Articles />
                         </div>
                     </TabPanel>
-
+                    <div>
+                        <h1>Coming Soon</h1>
+                    </div>
                     <TabPanel value={value} index={2} dir={theme.direction}>
-                        <div style={{ height: '50vh' }}>
-                            <h1> hello</h1>
-                        </div>
+
                     </TabPanel>
                 </SwipeableViews>
             </div>

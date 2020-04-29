@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Content from './Content'
+import youtube from '../api/youtube'
 
 import { Fab, Stepper, Step, StepLabel, Typography, makeStyles } from '@material-ui/core';
 import AppsRoundedIcon from '@material-ui/icons/AppsRounded';
@@ -14,6 +15,7 @@ export default function Options() {
     const [stackend, setStackend] = useState("")
     const [language, setLanguage] = useState("");
     const [level, setLevel] = useState("");
+    const [videos, setVideos] = useState([]);
 
     const nextStep = () => {
         var s = step;
@@ -56,6 +58,28 @@ export default function Options() {
 
 
 
+    const handleSubmit = async () => {
+        const searchTerm = `${category} ${language} ${level} ${stackend}`
+        const response = await youtube.get('search', {
+            params: {
+                part: 'snippet',
+                maxResults: '10',
+                key: 'AIzaSyDcKCSt0VCLOylTNT0LjTdw0qwTNPhD6o4',
+                q: searchTerm
+            }
+
+        })
+        const data = await response.data.items;
+        setVideos(data);
+        console.log(data);
+        if (data) {
+            nextStep();
+        }
+    }
+
+
+
+
     const steps = ["Category", "Stack", "Language", "Level"];
 
     const [stepColor] = useState(["", "", "", ""])
@@ -90,7 +114,7 @@ export default function Options() {
                     </div>
                     <div style={{ marginBottom: '10%', width: '100%' }}>
                         <Typography color="textSecondary" variant="h5" component="h2">
-                            Select a Category...
+                            Select a Category
                         </Typography>
                     </div>
                     <div style={{ display: 'flex', flexFlow: 'column', margin: 'auto', width: '70%' }}>
@@ -110,7 +134,7 @@ export default function Options() {
                     </div>
                     <div style={{ marginBottom: '10%', width: '100%' }}>
                         <Typography color="textSecondary" variant="h5" component="h2">
-                            Select a Category...
+                            Select a stack
                      </Typography>
                     </div>
                     <div style={{ display: 'flex', flexFlow: 'column', margin: 'auto', width: '70%' }}>
@@ -130,7 +154,7 @@ export default function Options() {
                     </div>
                     <div style={{ marginBottom: '10%', width: '100%' }}>
                         <Typography color="textSecondary" variant="h5" component="h2">
-                            Select a Category...
+                            Select a language
                 </Typography>
                     </div>
                     <div style={{ display: 'flex', flexFlow: 'column', margin: 'auto', width: '70%' }}>
@@ -150,21 +174,21 @@ export default function Options() {
                     </div>
                     <div style={{ marginBottom: '10%', width: '100%' }}>
                         <Typography color="textSecondary" variant="h5" component="h2">
-                            Select a Category...
+                            Select a level
                 </Typography>
                     </div>
                     <div style={{ display: 'flex', flexFlow: 'column', margin: 'auto', width: '70%' }}>
-                        <Fab style={{ marginBottom: '20px' }} color="primary" variant="extended" onClick={() => handleCategory("Basic")}>Basic</Fab>
-                        <Fab style={{ marginBottom: '20px' }} color="primary" variant="extended" onClick={() => handleCategory("Intermediate")}>Intermediate</Fab>
-                        <Fab style={{ marginBottom: '20px' }} color="primary" variant="extended" onClick={() => handleCategory("Advanced")}>Advanced</Fab>
+                        <Fab style={{ marginBottom: '20px' }} color="primary" variant="extended" onClick={() => handleSubmit()}>Basic</Fab>
+                        <Fab style={{ marginBottom: '20px' }} color="primary" variant="extended" onClick={() => handleSubmit()}>Intermediate</Fab>
+                        <Fab style={{ marginBottom: '20px' }} color="primary" variant="extended" onClick={() => handleSubmit()}>Advanced</Fab>
                     </div>
                 </div >
             )
         case 4:
             return (
                 <div className="mainContent">
-                    <h1>{`${category}, ${stackend}, ${language}, ${level}`}</h1>
-                    <Content />
+                    <h2 className="contentHeader">Swipe to explore free resources</h2>
+                    <Content videos={videos} />
                 </div >
             )
         default:
