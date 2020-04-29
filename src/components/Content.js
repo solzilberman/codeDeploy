@@ -105,7 +105,7 @@ export default function Content(props) {
                     onChangeIndex={handleChangeIndex}
                 >
                     <TabPanel value={value} index={0} dir={theme.direction}>
-                        <div style={{ display: 'flex', width: '100%', flexWrap: 'wrap', justifyContent: 'space-evenly', }}>
+                        <div style={{ display: 'flex', width: '100%', flexWrap: 'wrap', justifyContent: 'center', }}>
                             <VideoList videos={videos} />
                         </div>
                     </TabPanel>

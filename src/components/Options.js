@@ -63,7 +63,7 @@ export default function Options() {
         const response = await youtube.get('search', {
             params: {
                 part: 'snippet',
-                maxResults: '10',
+                maxResults: '8',
                 key: 'AIzaSyDcKCSt0VCLOylTNT0LjTdw0qwTNPhD6o4',
                 q: searchTerm
             }
