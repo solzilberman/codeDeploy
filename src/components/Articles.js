@@ -8,7 +8,7 @@ export default function Articles() {
 
     return (
         <div style={{ display: 'flex', width: '100%', flexWrap: 'wrap', justifyContent: 'space-evenly' }} >
-            <div style={{ width: '30vh' }}>
+            <div style={{ width: '30vh', marginBottom: '20px' }}>
 
                 <Card>
                     <a style={{ textDecoration: 'none' }} href={"https://github.com/"} target="_blank">
@@ -25,7 +25,7 @@ export default function Articles() {
                 </Card>
             </div>
 
-            <div style={{ width: '30vh' }}>
+            <div style={{ width: '30vh', marginBottom: '20px' }}>
                 <Card>
                     <a style={{ textDecoration: 'none' }} href={"https://leetcode.com/"} target="_blank">
                         <div style={{ width: '30vh' }}>
@@ -38,7 +38,7 @@ export default function Articles() {
                 </Card>
             </div>
 
-            <div style={{ width: '30vh' }}>
+            <div style={{ width: '30vh', marginBottom: '20px' }}>
                 <Card>
                     <a style={{ textDecoration: 'none' }} href={"https://stackoverflow.com/"} target="_blank">
                         <div style={{ width: '30vh' }}>
@@ -51,7 +51,7 @@ export default function Articles() {
                 </Card>
             </div>
 
-            <div style={{ width: '30vh' }}>
+            <div style={{ width: '30vh', marginBottom: '20px' }}>
                 <Card>
                     <a style={{ textDecoration: 'none' }} href={"https://www.geeksforgeeks.org/"} target="_blank">
                         <div style={{ width: '30vh' }}>
@@ -64,7 +64,7 @@ export default function Articles() {
                 </Card>
             </div>
 
-            <div style={{ width: '30vh' }}>
+            <div style={{ width: '30vh', marginBottom: '20px' }}>
                 <Card>
                     <a style={{ textDecoration: 'none' }} href={"https://www.codecademy.com/"} target="_blank">
                         <div style={{ width: '30vh' }}>
