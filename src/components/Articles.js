@@ -8,11 +8,11 @@ export default function Articles() {
 
     return (
         <div style={{ display: 'flex', width: '100%', flexWrap: 'wrap', justifyContent: 'space-evenly' }} >
-            <div style={{ width: '30vh', marginBottom: '20px' }}>
+            <div style={{ width: '300px', height: '150px', marginRight: '20px' }}>
 
                 <Card>
                     <a style={{ textDecoration: 'none' }} href={"https://github.com/"} target="_blank">
-                        <div style={{ width: '30vh' }}>
+                        <div style={{ width: '300px', height: '150px' }}>
                             <CodeIcon style={{ marginTop: '5%', width: 'larger' }} />
                             <h1>
                                 Github
@@ -25,10 +25,10 @@ export default function Articles() {
                 </Card>
             </div>
 
-            <div style={{ width: '30vh', marginBottom: '20px' }}>
+            <div style={{ width: '300px', height: '150px', marginRight: '20px' }}>
                 <Card>
                     <a style={{ textDecoration: 'none' }} href={"https://leetcode.com/"} target="_blank">
-                        <div style={{ width: '30vh' }}>
+                        <div style={{ width: '300px', height: '150px' }}>
                             <CodeIcon style={{ marginTop: '5%', width: 'larger' }} />
                             <h1>
                                 LeetCode
@@ -38,10 +38,10 @@ export default function Articles() {
                 </Card>
             </div>
 
-            <div style={{ width: '30vh', marginBottom: '20px' }}>
+            <div style={{ width: '300px', height: '150px', marginBottom: '20px', marginRight: '20px' }}>
                 <Card>
                     <a style={{ textDecoration: 'none' }} href={"https://stackoverflow.com/"} target="_blank">
-                        <div style={{ width: '30vh' }}>
+                        <div style={{ width: '300px', height: '150px' }}>
                             <CodeIcon style={{ marginTop: '5%', width: 'larger' }} />
                             <h1>
                                 StackOverflow
@@ -51,10 +51,10 @@ export default function Articles() {
                 </Card>
             </div>
 
-            <div style={{ width: '30vh', marginBottom: '20px' }}>
+            <div style={{ width: '300px', height: '150px', marginBottom: '20px', marginRight: '20px' }}>
                 <Card>
                     <a style={{ textDecoration: 'none' }} href={"https://www.geeksforgeeks.org/"} target="_blank">
-                        <div style={{ width: '30vh' }}>
+                        <div style={{ width: '300px', height: '150px' }}>
                             <CodeIcon style={{ marginTop: '5%', width: 'larger' }} />
                             <h1>
                                 GeeksforGeeks
@@ -64,10 +64,10 @@ export default function Articles() {
                 </Card>
             </div>
 
-            <div style={{ width: '30vh', marginBottom: '20px' }}>
+            <div style={{ width: '300px', height: '150px', marginBottom: '20px', marginRight: '20px' }}>
                 <Card>
                     <a style={{ textDecoration: 'none' }} href={"https://www.codecademy.com/"} target="_blank">
-                        <div style={{ width: '30vh' }}>
+                        <div style={{ width: '300px', height: '150px' }}>
                             <CodeIcon style={{ marginTop: '5%', width: 'larger' }} />
                             <h1>
                                 Code Academy
